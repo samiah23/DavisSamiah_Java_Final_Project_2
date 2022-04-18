@@ -1,5 +1,6 @@
 package com.company;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -47,13 +48,12 @@ public class Main {
 
 
             for(int i = 0; i < products.size(); i++) {
-                System.out.println(products.get(i) + " -------> " +  productsprice.get(i));
+                System.out.println(products.get(i) + " -------> " + productsprice.get(i));
             }
-
 
             while(!(input = stringInput.nextLine()).equalsIgnoreCase("0")) {
                 for(String i:products) {
-                    if(i.contains(input) || i.equalsIgnoreCase(input)) {
+                    if(input.length() > 0 && (i.contains(input) || i.equalsIgnoreCase(input))) {
                         total += productsprice.get(products.indexOf(i));
                         output.append("\n\t").append(input);
                         if(!CustomerItem.contains(input)) {
@@ -74,7 +74,9 @@ public class Main {
         for(String i:CustomerItem) {
             System.out.println("\t"+i+" ("+CustomerItemAmounts.get(CustomerItem.indexOf(i))+")");
         }
-        System.out.println("\nGrand Total: "+grandTotal);
+        DecimalFormat df = new
+        DecimalFormat ("#########.##");
+        System.out.println("\nGrand Total: "+df.format(grandTotal));
     }
 }
 
