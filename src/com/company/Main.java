@@ -27,8 +27,8 @@ public class Main {
         productsprice.add(0.99);
         productsprice.add(0.99);
         productsprice.add(3.99);
-        productsprice.add(120.0);
-        productsprice.add(50.0);
+        productsprice.add(120.00);
+        productsprice.add(50.00);
         productsprice.add(0.99);
         productsprice.add(0.99);
 
@@ -44,7 +44,7 @@ public class Main {
         while(!(input = stringInput.nextLine()).equalsIgnoreCase("0"))   {
             output.append("\n").append(input);
             total = 0.00;
-            System.out.println("Enter the name of items: (0 to end");
+            System.out.println("Enter the name of items: (0 to end)");
 
 
             for(int i = 0; i < products.size(); i++) {
